@@ -10,7 +10,7 @@ my_perc <- function(x) {
   x <- scales::percent(x, accuracy = 0.01)
 }
 
-do_arch_test <- function(x, max_lag = 5) {
+do_arch_test <- function(x, max_lag) {
   require(FinTS)
   require(tidyverse)
   
@@ -54,7 +54,7 @@ do_sim <- function(n_sim = 1000, n_t = 1000, my_garch, df_prices) {
   
 }
 
-find_best_arch_model <- function(x, max_global_lag = 5) {
+find_best_arch_model <- function(x, max_global_lag) {
   
   # require(tidyr)
   
