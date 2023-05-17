@@ -44,15 +44,11 @@ vecVariables =
     "EUR_USD", "BTC_EUR", "N225",
     "FCHI", "AEX", "GSPC", "STOXX50E")
 
-for (vari in vecVariables) {
-  eval(parse(text = paste0(vari, "<- xts::last(", vari, ",50)")))
-}
-
 source("lib_GARCH.R")
 source("lib_computationReturnsInnov.R")
 
 for (vari in vecVariables) {
-  computeReturns(variableName = vari, max_global_lag = 2)
+  computeReturns(variableName = vari, max_global_lag = 5)
 }
 
 # We merge all the data
